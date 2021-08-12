@@ -69,13 +69,8 @@ const usuariosPut = async (req, res = response) => {
 const usuariosDelete = async (req, res = response) => {
 
     const { id } = req.params;
-
-    //BORRAR FISICAMENTE
-    //const usuario = await Usuario.findByIdAndDelete(id);
-    //MARCAR COMO BORRADO
     const usuario = await Usuario.findByIdAndUpdate(id, { estado: false});
-
-
+   
     res.json({ usuario });
 
 }
