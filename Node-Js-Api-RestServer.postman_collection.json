@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "45a36f9e-70b0-4395-8638-07398edc35e1",
+		"_postman_id": "1d30def9-bd7b-47b4-a729-adc5e43ee29e",
 		"name": "Node-Js-Api-RestServer",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -101,7 +101,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"yo\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"USER_ROLE\",\r\n    \"correo\": \"1234@mail.cl\",\r\n    \"password\":\"123456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"raw": "{\r\n    \"nombre\": \"Christian Guerra\",\r\n    \"password\": \"123456\",\r\n    \"correo\": \"caguerrao@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,13 +109,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/users",
+					"raw": "{{url}}api/users",
 					"host": [
-						"localhost"
+						"{{url}}api"
 					],
-					"port": "3000",
 					"path": [
-						"api",
 						"users"
 					]
 				}
@@ -135,7 +133,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"correo\": \"test3@gmail.com\",\r\n    \"password\": \"1235456\"\r\n}",
+					"raw": "{\r\n    \"correo\": \"caguerrao@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -143,13 +141,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/auth/login",
+					"raw": "{{url}}api/auth/login",
 					"host": [
-						"localhost"
+						"{{url}}api"
 					],
-					"port": "3000",
 					"path": [
-						"api",
 						"auth",
 						"login"
 					]
@@ -240,13 +236,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}api/categorias/125",
+					"raw": "{{url}}api/categorias/6116a2268b14404078539f2a",
 					"host": [
 						"{{url}}api"
 					],
 					"path": [
 						"categorias",
-						"125"
+						"6116a2268b14404078539f2a"
 					]
 				}
 			},
@@ -256,10 +252,16 @@
 			"name": "Actualizar categoria",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE2YTE4YThiMTQ0MDQwNzg1MzlmMjMiLCJpYXQiOjE2Mjg4NzMyMjcsImV4cCI6MTYyODg4NzYyN30.O-AxVHcbhFBoUqH2Dfy9c6o3c718RJj2FDt-tLii8lA",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Jose Guerra\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papit@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"raw": "{\r\n    \"nombre\":\"chocolates \"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -267,13 +269,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}api/categorias/10",
+					"raw": "{{url}}api/categorias/6116a2388b14404078539f34",
 					"host": [
 						"{{url}}api"
 					],
 					"path": [
 						"categorias",
-						"10"
+						"6116a2388b14404078539f34"
 					]
 				}
 			},
@@ -286,7 +288,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE0N2QyYzc3MWQwYTIxNjRhZWRiNzUiLCJpYXQiOjE2Mjg3MzI3MzMsImV4cCI6MTYyODc0NzEzM30.QBukqDohvIpVwk5BxoPi9GMCCnRrdU-UJVV9r9fDZJI",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE2YTE4YThiMTQ0MDQwNzg1MzlmMjMiLCJpYXQiOjE2Mjg4Nzk1OTgsImV4cCI6MTYyODg5Mzk5OH0.IqIQk4-e5f1miBqJTMc0cB4s0YUBawUM15NdCCMcPhU",
 						"type": "text"
 					}
 				],
@@ -300,13 +302,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}api/categorias/61147d2c771d0a2164aedb75",
+					"raw": "{{url}}api/categorias/6116a2388b14404078539f34",
 					"host": [
 						"{{url}}api"
 					],
 					"path": [
 						"categorias",
-						"61147d2c771d0a2164aedb75"
+						"6116a2388b14404078539f34"
 					]
 				}
 			},
@@ -319,13 +321,45 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE0MWFhYzFkODQyOTE5NjBlYjk3ZDEiLCJpYXQiOjE2Mjg4MjExMTQsImV4cCI6MTYyODgzNTUxNH0.Oix_gseL5fk3kEIwuGXJt9T3J7BhHbnYoScbO7yZtxI",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE2YTE4YThiMTQ0MDQwNzg1MzlmMjMiLCJpYXQiOjE2Mjg4NzMyMjcsImV4cCI6MTYyODg4NzYyN30.O-AxVHcbhFBoUqH2Dfy9c6o3c718RJj2FDt-tLii8lA",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Libros\"\r\n}",
+					"raw": "{\r\n    \"nombre\": \"Tazas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE2YTE4YThiMTQ0MDQwNzg1MzlmMjMiLCJpYXQiOjE2Mjg4NzMyMjcsImV4cCI6MTYyODg4NzYyN30.O-AxVHcbhFBoUqH2Dfy9c6o3c718RJj2FDt-tLii8lA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Tazas\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -344,5 +378,6 @@
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
