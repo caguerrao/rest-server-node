@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "45a36f9e-70b0-4395-8638-07398edc35e1",
+		"name": "Node-Js-Api-RestServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Guerra\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papit@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/users/10",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"users",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Manuel Guerra Palma...\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculinos\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papa@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/users",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE0N2QyYzc3MWQwYTIxNjRhZWRiNzUiLCJpYXQiOjE2Mjg3MzI3MzMsImV4cCI6MTYyODc0NzEzM30.QBukqDohvIpVwk5BxoPi9GMCCnRrdU-UJVV9r9fDZJI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Guerra\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papit@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/users/61147d2c771d0a2164aedb75",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"users",
+						"61147d2c771d0a2164aedb75"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"yo\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"USER_ROLE\",\r\n    \"correo\": \"1234@mail.cl\",\r\n    \"password\":\"123456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "A123456",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"correo\": \"test3@gmail.com\",\r\n    \"password\": \"1235456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Google",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "id-token",
+						"value": "A123456",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_token\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/google",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Categorias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Manuel Guerra Palma...\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculinos\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papa@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Categorias Por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Manuel Guerra Palma...\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculinos\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papa@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias/125",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias",
+						"125"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar categoria",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Guerra\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papit@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias/10",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE0N2QyYzc3MWQwYTIxNjRhZWRiNzUiLCJpYXQiOjE2Mjg3MzI3MzMsImV4cCI6MTYyODc0NzEzM30.QBukqDohvIpVwk5BxoPi9GMCCnRrdU-UJVV9r9fDZJI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jose Guerra\",\r\n    \"edad\":72,\r\n    \"sexo\": \"Masculino\",\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correo\": \"papit@gmail.com\",\r\n    \"password\":\"1235456\",\r\n    \"google\": true,\r\n    \"estado\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias/61147d2c771d0a2164aedb75",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias",
+						"61147d2c771d0a2164aedb75"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTE0MWFhYzFkODQyOTE5NjBlYjk3ZDEiLCJpYXQiOjE2Mjg4MjExMTQsImV4cCI6MTYyODgzNTUxNH0.Oix_gseL5fk3kEIwuGXJt9T3J7BhHbnYoScbO7yZtxI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Libros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
