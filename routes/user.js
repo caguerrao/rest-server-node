@@ -14,6 +14,7 @@ const { usuariosGet,
     usuariosPost,
     usuariosPut,
     usuariosDelete
+    
 } = require('../controllers/users')
 
 const { esRoleValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-validators');
